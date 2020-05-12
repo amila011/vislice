@@ -21,7 +21,7 @@ class Igra:
 
     def pravilne_crke(self):
         pravilne = [c for c in self.crke if c in self.geslo]
-        return pravilno
+        return pravilne
 
     def stevilo_napak(self):
         return len(self.napacne_crke())
@@ -44,7 +44,7 @@ class Igra:
                 pravilni_del += "_"
         return pravilni_del
 
-    def nepravilni_ugibi(self):(
+    def nepravilni_ugibi(self):
         return " ".join(self.napacne_crke())
 
     def ugibaj(self, crka):
