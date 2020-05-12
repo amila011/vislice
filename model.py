@@ -74,3 +74,5 @@ def nova_igra():
     beseda = random.choice(bazen_besed)
 
     igra = Igra(beseda)
+
+    return igra
