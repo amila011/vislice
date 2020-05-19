@@ -76,3 +76,25 @@ def nova_igra():
     igra = Igra(beseda)
 
     return igra
+
+class Vislice:
+    def __init__(self):
+        self.igre = {}
+
+    def prost_id_igre(self):
+        if len(self.igre) == 0:
+            return 0
+        else:
+            return max(self.igre.keys()) + 1
+
+    def nova_igra(self):
+        id_igre = self.prost_id_igre()
+        igra = nova_igra() #klicemo funkcijo ... motodo bi pa klical na nacin self.nova_igra()
+        self.igre[id_igre] = (igra, ZAČETEK)
+        return id_igre
+
+    def ugibaj(self, id_igre, crka):
+        igra, _ = self.igre[id_igre] #v [] se krije kljuc ... to se shrani v dve spremenljivki
+        stanje = igra.ugibaj(crka)
+        self.igre[id_igre] = (igra, stanje)
+
